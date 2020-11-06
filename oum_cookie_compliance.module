@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * The main file for the custom cookies module.
+ *
+ * This module implements custom cookie logic, after the user agrees with the cookie popup from eu_cookie_compliance.
+ */
+
+
+/**
+ * Implements hook_page_attachments().
+ */
+function oum_cookie_compliance_page_attachments(&$attachments) {
+
+  // Set Google Consent Mode to denied by default
+  // Injected in head, because it needs to be set before the gtm javascript
+  $attachments['#attached']['html_head'][] = [
+    [
+      '#type' => 'html_tag',
+      '#tag' => 'script',
+      '#value' => '
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("consent", "default", {
+            ad_storage: "denied",
+            analytics_storage: "denied",
+            wait_for_update: 500
+        });
+        gtag("set", "ads_data_redaction", true);
+      ',
+    ],
+    'oum-datalayer-js',
+  ];
+
+  // add eu_cookie_compliance hooks to update consent mode after cookie approval
+  $attachments['#attached']['library'][] = 'oum_cookie_compliance/eu_cookie_compliance_hook';
+}

@@ -1,0 +1,8 @@
+name: 'openup.media Cookie Compliance'
+type: module
+description: 'Adds custom cookie logic (Google Consent mode, Cookie Consent datalayer event).'
+package: 'Statistics'
+core_version_requirement: ^8 || ^9
+dependencies:
+  - eu_cookie_compliance
+  - google_tag

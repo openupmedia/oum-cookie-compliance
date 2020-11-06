@@ -1,0 +1,10 @@
+### Google Consent Mode
+eu_cookie_compliance_hook:
+  version: VERSION
+  header: true
+  js:
+    js/eu_cookie_compliance_hook.js: {}
+  dependencies:
+    - eu_cookie_compliance/eu_cookie_compliance
+    - core/drupal
+    - core/drupalSettings
