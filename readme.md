@@ -7,6 +7,29 @@ The eu_cookie_compliance & google_tag modules are required.
 
 We **need** an `analytics` & preferably a `Marketing` category in eu_cookie_compliance.
 
+
+## Install
+Add the git repository to your composer.json `repositories`:
+
+```php
+    "repositories": [
+        {
+            ...
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/openupmedia/oum_cookie_compliance.git"
+        }
+    ],
+```
+
+After that you can require this module as a regular composer dependency:
+
+```php
+  composer require openupmedia/oum_cookie_compliance
+```
+
+
 ## How does it work
 We set a default Google Consent Mode (`analytics_storage` & `marketing_storage` are both set so `denied`). With this setting we can safely activate Google Analytics or other Google services, and they will comply with GDPR. No cookies will be set, and no identifying data is stored.
 
