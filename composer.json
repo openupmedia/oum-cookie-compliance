@@ -1,5 +1,5 @@
 {
-  "name": "opeupmedia/oum_cookie_compliance",
+  "name": "openupmedia/oum_cookie_compliance",
   "description": "Adds custom cookie logic (Google Consent mode, Cookie Consent datalayer event).",
   "type": "drupal-custom-module",
   "license": "GPL-2.0-or-later",
