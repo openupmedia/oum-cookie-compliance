@@ -45,7 +45,7 @@
    * Load saved cookie preferences
    */
   var postPreferencesLoadHandler = function(response) {
-    console.log('hook ran - postPreferencesLoadHandler');
+    // console.log('hook ran - postPreferencesLoadHandler');
 
     var consent = _processCategories(response);
 
@@ -69,7 +69,7 @@
    * Visitor saves cookie preferences
    */
   var postPreferencesSaveHandler = function(response) {
-    console.log('hooks ran - postPreferencesSaveHandler');
+    // console.log('hooks ran - postPreferencesSaveHandler');
     
     var consent = _processCategories(response);
 
